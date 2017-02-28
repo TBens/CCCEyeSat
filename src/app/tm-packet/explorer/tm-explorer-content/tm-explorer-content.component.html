@@ -1,0 +1,108 @@
+<div class="col-md-10">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+                    Liste des paquets
+                </div>
+                <div class="panel-body" style="height:80vh">
+                    <table class="table table-condensed" data-sort="table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Nom</th>
+                                <th class="pointer-hover">Date bord</th>
+                                <th class="pointer-hover">Date de réception</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let packet of tmpackets"
+                                [class.active]="packet === selectedPacket" class="pointer-hover"
+                                (click)="onSelect(packet)">
+                                <th scope="row">
+                                    <svg width="16" height="16">
+                                        <circle cx="8" cy="8" r="4" fill=#1bc98e />
+                                    </svg>
+                                </th>
+                                <td>{{packet.name}}</td>
+                                <td>{{packet.onBoardDate}}</td>
+                                <td>{{packet.receptionDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+                    Explorateur de paquets
+                </div>
+                <div class="panel panel-body" style="height:35vh">
+                    <table class="table">
+                        <tr>
+                            <th>Status</th>
+                            <th>Nom</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <svg width="16" height="16">
+                                    <circle cx="8" cy="8" r="4" fill=#1bc98e />
+                                </svg>
+                            </td>
+                            <td>TM_3_25_PLSBRD</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel panel-heading">
+
+                    <div class="dropdown">
+                        Paramètres
+                        <a class="dropdown-toggle pull-right" id="dropdownMenuParametreColum" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-object-align-top pull-right" aria-hidden="true"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuParametreColum">
+                            <li><a href="#"><input type="checkbox" checked> Status</a></li>
+                            <li><a href="#"><input type="checkbox"> N°</a></li>
+                            <li><a href="#"><input type="checkbox"> BitOffset</a></li>
+                            <li><a href="#"><input type="checkbox" checked> Nom</a></li>                                    
+                            <li><a href="#"><input type="checkbox"> Description</a></li>
+                            <li><a href="#"><input type="checkbox" checked> Valeur</a></li>
+                            <li><a href="#"><input type="checkbox" checked> Valeur (HEX)</a></li>
+                            <li><a href="#"><input type="checkbox" checked> Unité</a></li>
+                            <li><a href="#"><input type="checkbox"> Level</a></li>
+                            <li><a href="#"><input type="checkbox"> Row</a></li>
+                            <li><a href="#"><input type="checkbox"> Physical</a></li>
+                            <li><a href="#"><input type="checkbox"> SigCond</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="panel panel-body" style="height:30vh">
+                    <table class="table">
+                        <tr>
+                            <th>Status</th>
+                            <th>Nom</th>
+                            <th>Valeur</th>
+                            <th>Valeur (HEX)</th>
+                            <th>Unité</th>
+                        </tr>
+                        <tr draggable="true" ondragstart="drag(event)">
+                            <td>
+                                <svg width="16" height="16">
+                                    <circle cx="8" cy="8" r="4" fill=#1bc98e />
+                                </svg>
+                            </td>
+                            <td>EPS_VBOOST1</td>
+                            <td>3280</td>
+                            <td>CD0</td>
+                            <td>mV</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

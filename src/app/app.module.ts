@@ -10,10 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TmPacketComponent } from './tm-packet/tm-packet.component';
-import { TmGridComponent } from './tm-grid/tm-grid.component';
-import { TmFreeComponent } from './tm-free/tm-free.component';
+import { TmGridComponent } from './tm-packet/tm-grid/tm-grid.component';
+import { TmFreeComponent } from './tm-packet/tm-free/tm-free.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { TmExplorerSidebar } from './tm-explorer-sidebar/tm-explorer-sidebar.component';
+import { TmExplorerSidebar } from './tm-packet/explorer/tm-explorer-sidebar/tm-explorer-sidebar.component';
+import { TmExplorerContent } from './tm-packet/explorer/tm-explorer-content/tm-explorer-content.component';
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -26,7 +27,8 @@ import { TmPacketsService } from './tm-packets.service';
     TmPacketComponent,
     TmGridComponent,
     TmFreeComponent,
-    TmExplorerSidebar
+    TmExplorerSidebar,
+    TmExplorerContent,
   ],
   imports: [
     BrowserModule,
