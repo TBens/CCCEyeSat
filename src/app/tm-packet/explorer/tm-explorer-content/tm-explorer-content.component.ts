@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './tm-explorer-content.component.html'
 })
 export class TmExplorerContent {
+  
 }

@@ -1,38 +1,6 @@
 <div class="col-md-10">
     <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel panel-heading">
-                    Liste des paquets
-                </div>
-                <div class="panel-body" style="height:80vh">
-                    <table class="table table-condensed" data-sort="table">
-                        <thead>
-                            <tr>
-                                <th>Status</th>
-                                <th>Nom</th>
-                                <th class="pointer-hover">Date bord</th>
-                                <th class="pointer-hover">Date de réception</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let packet of tmpackets"
-                                [class.active]="packet === selectedPacket" class="pointer-hover"
-                                (click)="onSelect(packet)">
-                                <th scope="row">
-                                    <svg width="16" height="16">
-                                        <circle cx="8" cy="8" r="4" fill=#1bc98e />
-                                    </svg>
-                                </th>
-                                <td>{{packet.name}}</td>
-                                <td>{{packet.onBoardDate}}</td>
-                                <td>{{packet.receptionDate}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <tm-explorer-content-packet-list></tm-explorer-content-packet-list>
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel panel-heading">

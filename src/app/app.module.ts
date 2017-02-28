@@ -15,6 +15,7 @@ import { TmFreeComponent } from './tm-packet/tm-free/tm-free.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TmExplorerSidebar } from './tm-packet/explorer/tm-explorer-sidebar/tm-explorer-sidebar.component';
 import { TmExplorerContent } from './tm-packet/explorer/tm-explorer-content/tm-explorer-content.component';
+import { TmExplorerContentPacketList } from './tm-packet/explorer/tm-explorer-content/packet-list/packet-list.component'
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -29,6 +30,7 @@ import { TmPacketsService } from './tm-packets.service';
     TmFreeComponent,
     TmExplorerSidebar,
     TmExplorerContent,
+    TmExplorerContentPacketList,
   ],
   imports: [
     BrowserModule,
