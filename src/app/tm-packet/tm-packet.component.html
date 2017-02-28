@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Centre de contrôle-commande : Télémesure</title>
+    </head>
+    <body>
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <div class="panel-group">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#date">Filtrer par date</a><span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                </h4>
+                            </div>
+                            <div id="date" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Du</span>
+                                        <input type="date" class="form-control" aria-describedby="basic-addon1">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Au</span>
+                                        <input type="date" class="form-control" aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel-group">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#packet">Filtrer par paquet</a><span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                </h4>
+                            </div>
+                            <div id="packet" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Rechercher...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <br>
+                                        <input type="checkbox"> TM_3_25_HKPWRTEMP
+                                        <br><br>
+                                        <input type="checkbox"> TM_3_25_HKAOCSRRM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel-group">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#customview">Vues personalisées</a><span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                </h4>
+                            </div>
+                            <div id="customview" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav">
+                                        <li><a href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Créer une nouvelle vue</a></li>
+                                        <li><a href="customviewgrid.html" ondrop="drop(event)" ondragover="allowDrop(event)">Vue alignée sur grille</a></li>
+                                        <li><a href="customviewfree.html" ondrop="drop(event)" ondragover="allowDrop(event)">Vue placement libre</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            Liste des paquets
+                        </div>
+                        <div class="panel-body" style="height:80vh">
+                            <!--   <table class="table">
+                                <tr>
+                                    <th>Status <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+                                    <th>Nom <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+                                    <th>Date bord <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+                                    <th>Date de réception <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg width="16" height="16">
+                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                        </svg>
+                                    </td>
+                                    <td>TM_3_25_HKMISCELLANEOUS</td>
+                                    <td>19/02/2017 00:12:34</td>
+                                    <td>19/02/2017 06:15:29</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg width="16" height="16">
+                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                        </svg>
+                                    </td>
+                                    <td>TM_3_25_HKTRX</td>
+                                    <td>19/02/2017 00:12:33</td>
+                                    <td>19/02/2017 06:15:29</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg width="16" height="16">
+                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                        </svg>
+                                    </td>
+                                    <td>TM_3_25_PLSBRD</td>
+                                    <td>19/02/2017 00:12:33</td>
+                                    <td>19/02/2017 06:15:28</td>
+                                </tr>
+                                
+                                <tbody>
+									<tr *ngFor="let packet of tmpackets"
+										[class.active]="packet === selectedPacket" class="pointer-hover"
+										(click)="onSelect(packet)">
+										<th scope="row">OK</th>
+										<td>{{packet.name}}</td>
+										<td>{{packet.description}}</td>
+										<td>{{packet.onBoardDate}}</td>
+										<td>{{packet.receptionDate}}</td>
+									</tr>
+								</tbody>
+                            </table> -->
+                            <table class="table table-condensed" data-sort="table">
+								<thead>
+									<tr>
+										<th>Status</th>
+										<th>Name</th>
+										<th>Description</th>
+										<th class="pointer-hover">OnB. Date</th>
+										<th class="pointer-hover">Recept. Date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let packet of tmpackets"
+										[class.active]="packet === selectedPacket" class="pointer-hover"
+										(click)="onSelect(packet)">
+										<th scope="row">OK</th>
+										<td>{{packet.name}}</td>
+										<td>{{packet.description}}</td>
+										<td>{{packet.onBoardDate}}</td>
+										<td>{{packet.receptionDate}}</td>
+									</tr>
+								</tbody>
+							</table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            Explorateur de paquets
+                        </div>
+                        <div class="panel panel-body" style="height:35vh">
+                            <table class="table">
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Nom</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <svg width="16" height="16">
+                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                        </svg>
+                                    </td>
+                                    <td>TM_3_25_PLSBRD</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+
+                            <div class="dropdown">
+                                Paramètres
+                                <a class="dropdown-toggle pull-right" id="dropdownMenuParametreColum" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="glyphicon glyphicon-object-align-top pull-right" aria-hidden="true"></span>
+                                </a>
+                                <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenuParametreColum">
+                                    <li><a href="#"><input type="checkbox" checked> Status</a></li>
+                                    <li><a href="#"><input type="checkbox"> N°</a></li>
+                                    <li><a href="#"><input type="checkbox"> BitOffset</a></li>
+                                    <li><a href="#"><input type="checkbox" checked> Nom</a></li>                                    
+                                    <li><a href="#"><input type="checkbox"> Description</a></li>
+                                    <li><a href="#"><input type="checkbox" checked> Valeur</a></li>
+                                    <li><a href="#"><input type="checkbox" checked> Valeur (HEX)</a></li>
+                                    <li><a href="#"><input type="checkbox" checked> Unité</a></li>
+                                    <li><a href="#"><input type="checkbox"> Level</a></li>
+                                    <li><a href="#"><input type="checkbox"> Row</a></li>
+                                    <li><a href="#"><input type="checkbox"> Physical</a></li>
+                                    <li><a href="#"><input type="checkbox"> SigCond</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="panel panel-body" style="height:30vh">
+                            <table class="table">
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Nom</th>
+                                    <th>Valeur</th>
+                                    <th>Valeur (HEX)</th>
+                                    <th>Unité</th>
+                                </tr>
+                                <tr draggable="true" ondragstart="drag(event)">
+                                    <td>
+                                        <svg width="16" height="16">
+                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                        </svg>
+                                    </td>
+                                    <td>EPS_VBOOST1</td>
+                                    <td>3280</td>
+                                    <td>CD0</td>
+                                    <td>mV</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
