@@ -13,6 +13,8 @@ import { TmPacketComponent } from './tm-packet/tm-packet.component';
 import { TmGridComponent } from './tm-grid/tm-grid.component';
 import { TmFreeComponent } from './tm-free/tm-free.component';
 
+import { TmPacketsService } from './tm-packets.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { TmFreeComponent } from './tm-free/tm-free.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TmPacketsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

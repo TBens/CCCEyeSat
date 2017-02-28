@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router }   from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -10,4 +10,12 @@ import { Router }   from '@angular/router';
 export class AppComponent {
   title = 'app works!';
   constructor(private router: Router) { }
+  
+  gotoHome(): void {
+    this.router.navigate(['/home']);
+  }
+
+  gotoTmPacket(): void {
+    this.router.navigate(['/tm-packet']);
+  }
 }

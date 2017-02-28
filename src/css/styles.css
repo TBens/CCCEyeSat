@@ -11,3 +11,8 @@ and open the template in the editor.
 .homeTop{
     margin-top: 15%
 }
+
+.pointer-hover {
+	cursor: pointer;
+	cursor: hand;
+}

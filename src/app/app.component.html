@@ -12,11 +12,11 @@
 		<div *ngIf="router.url !== '/login'">
 		    <nav class="navbar navbar-inverse">
 		            <div class="navbar-header">
-		                <a class="navbar-brand" href="home.html">Eye-Sat</a>
+		                <a class="navbar-brand pointer-hover" (click)="gotoHome()">Eye-Sat</a>
 		            </div>
 		            <div class="collapse navbar-collapse">
 		                <ul class="nav navbar-nav">
-		                    <li><a href="telemetry.html">Télémesure</a></li>
+		                    <li><a (click)="gotoTmPacket()" class="pointer-hover">Télémesure</a></li>
 		                    <li><a href="#">Télécommande</a></li>
 		                    <li><a href="#">Procédure</a></li>
 		                    <li><a href="#">Journal des évènements</a></li>

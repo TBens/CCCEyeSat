@@ -92,73 +92,25 @@
                             Liste des paquets
                         </div>
                         <div class="panel-body" style="height:80vh">
-                            <!--   <table class="table">
-                                <tr>
-                                    <th>Status <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
-                                    <th>Nom <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
-                                    <th>Date bord <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
-                                    <th>Date de réception <span class="glyphicon glyphicon-sort pull-right" aria-hidden="true"></span></th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <svg width="16" height="16">
-                                            <circle cx="8" cy="8" r="4" fill="green" />
-                                        </svg>
-                                    </td>
-                                    <td>TM_3_25_HKMISCELLANEOUS</td>
-                                    <td>19/02/2017 00:12:34</td>
-                                    <td>19/02/2017 06:15:29</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <svg width="16" height="16">
-                                            <circle cx="8" cy="8" r="4" fill="green" />
-                                        </svg>
-                                    </td>
-                                    <td>TM_3_25_HKTRX</td>
-                                    <td>19/02/2017 00:12:33</td>
-                                    <td>19/02/2017 06:15:29</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <svg width="16" height="16">
-                                            <circle cx="8" cy="8" r="4" fill="green" />
-                                        </svg>
-                                    </td>
-                                    <td>TM_3_25_PLSBRD</td>
-                                    <td>19/02/2017 00:12:33</td>
-                                    <td>19/02/2017 06:15:28</td>
-                                </tr>
-                                
-                                <tbody>
-									<tr *ngFor="let packet of tmpackets"
-										[class.active]="packet === selectedPacket" class="pointer-hover"
-										(click)="onSelect(packet)">
-										<th scope="row">OK</th>
-										<td>{{packet.name}}</td>
-										<td>{{packet.description}}</td>
-										<td>{{packet.onBoardDate}}</td>
-										<td>{{packet.receptionDate}}</td>
-									</tr>
-								</tbody>
-                            </table> -->
                             <table class="table table-condensed" data-sort="table">
 								<thead>
 									<tr>
 										<th>Status</th>
-										<th>Name</th>
-										<th>Description</th>
-										<th class="pointer-hover">OnB. Date</th>
-										<th class="pointer-hover">Recept. Date</th>
+										<th>Nom</th>
+										<th class="pointer-hover">Date bord</th>
+										<th class="pointer-hover">Date de réception</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr *ngFor="let packet of tmpackets"
 										[class.active]="packet === selectedPacket" class="pointer-hover"
 										(click)="onSelect(packet)">
-										<th scope="row">OK</th>
+										<th scope="row">
+											<svg width="16" height="16">
+                                            	<circle cx="8" cy="8" r="4" fill=#1bc98e />
+                                        	</svg>
+                                        </th>
 										<td>{{packet.name}}</td>
-										<td>{{packet.description}}</td>
 										<td>{{packet.onBoardDate}}</td>
 										<td>{{packet.receptionDate}}</td>
 									</tr>
@@ -181,7 +133,7 @@
                                 <tr>
                                     <td>
                                         <svg width="16" height="16">
-                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                            <circle cx="8" cy="8" r="4" fill=#1bc98e />
                                         </svg>
                                     </td>
                                     <td>TM_3_25_PLSBRD</td>
@@ -226,7 +178,7 @@
                                 <tr draggable="true" ondragstart="drag(event)">
                                     <td>
                                         <svg width="16" height="16">
-                                            <circle cx="8" cy="8" r="4" fill="green" />
+                                            <circle cx="8" cy="8" r="4" fill=#1bc98e />
                                         </svg>
                                     </td>
                                     <td>EPS_VBOOST1</td>
