@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +13,8 @@ import { TmFreeComponent } from './tm-packet/tm-free/tm-free.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TmExplorerSidebar } from './tm-packet/explorer/tm-explorer-sidebar/tm-explorer-sidebar.component';
 import { TmExplorerContent } from './tm-packet/explorer/tm-explorer-content/tm-explorer-content.component';
-import { TmExplorerContentPacketList } from './tm-packet/explorer/tm-explorer-content/packet-list/packet-list.component'
+import { TmExplorerContentPacketList } from './tm-packet/explorer/tm-explorer-content/packet-list/packet-list.component';
+import { TmExplorerContentPacketExplorer } from './tm-packet/explorer/tm-explorer-content/packet-explorer/packet-explorer.component'
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -31,6 +30,7 @@ import { TmPacketsService } from './tm-packets.service';
     TmExplorerSidebar,
     TmExplorerContent,
     TmExplorerContentPacketList,
+    TmExplorerContentPacketExplorer,
   ],
   imports: [
     BrowserModule,
