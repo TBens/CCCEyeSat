@@ -13,6 +13,7 @@ import { TmPacketComponent } from './tm-packet/tm-packet.component';
 import { TmGridComponent } from './tm-grid/tm-grid.component';
 import { TmFreeComponent } from './tm-free/tm-free.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TmSidebar } from './tm-sidebar/tm-sidebar.component';
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -24,7 +25,8 @@ import { TmPacketsService } from './tm-packets.service';
     HomeComponent,
     TmPacketComponent,
     TmGridComponent,
-    TmFreeComponent
+    TmFreeComponent,
+    TmSidebar
   ],
   imports: [
     BrowserModule,
