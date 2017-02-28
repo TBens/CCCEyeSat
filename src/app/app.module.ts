@@ -10,13 +10,17 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TmPacketComponent } from './tm-packet/tm-packet.component';
+import { TmGridComponent } from './tm-grid/tm-grid.component';
+import { TmFreeComponent } from './tm-free/tm-free.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    TmPacketComponent
+    TmPacketComponent,
+    TmGridComponent,
+    TmFreeComponent
   ],
   imports: [
     BrowserModule,
