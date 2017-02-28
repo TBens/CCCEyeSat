@@ -84,6 +84,15 @@
             </ul>
         </div>
 
+
+
+
+<!--  Tableau de paquets -->
+
+
+
+
+
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-6">
@@ -125,18 +134,20 @@
                             Explorateur de paquets
                         </div>
                         <div class="panel panel-body" style="height:35vh">
-                            <table class="table">
-                                <tr>
-                                    <th>Status</th>
-                                    <th>Nom</th>
-                                </tr>
-                                <tr>
+                            <table class="table table-condensed" data-sort="table">
+                                <thead>
+                                	<tr>
+	                                    <th>Status</th>
+	                                    <th>Nom</th>
+	                                </tr>
+                                </thead>
+                                <tr *ngIf="selectedPacket">
                                     <td>
                                         <svg width="16" height="16">
                                             <circle cx="8" cy="8" r="4" fill=#1bc98e />
                                         </svg>
                                     </td>
-                                    <td>TM_3_25_PLSBRD</td>
+                                    <td>{{selectedPacket.name}}</td>
                                 </tr>
                             </table>
                         </div>

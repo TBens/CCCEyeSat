@@ -10,15 +10,20 @@ import { Router } from '@angular/router';
 })
 export class TmPacketComponent implements OnInit {
   tmpackets: SpacePacket[];
+  selectedPacket: SpacePacket;
+  
+    constructor(private router: Router, private tmPacketsService: TmPacketsService) { }
 
-  constructor(private tmPacketsService: TmPacketsService) { }
+  onSelect(packet: SpacePacket): void {
+    this.selectedPacket = packet;
+  }
 
+  getTmPackets(): void {
+    this.tmPacketsService.getTmPackets().then(tmpackets => this.tmpackets = tmpackets);
+  }
 
   ngOnInit() {
     this.getTmPackets();
-  }
-  getTmPackets(): void {
-    this.tmPacketsService.getTmPackets().then(tmpackets => this.tmpackets = tmpackets);
   }
 
 }
