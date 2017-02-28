@@ -15,6 +15,7 @@ import { TmExplorerSidebar } from './tm-packet/explorer/tm-explorer-sidebar/tm-e
 import { TmExplorerContent } from './tm-packet/explorer/tm-explorer-content/tm-explorer-content.component';
 import { TmExplorerContentPacketList } from './tm-packet/explorer/tm-explorer-content/packet-list/packet-list.component';
 import { TmExplorerContentPacketExplorer } from './tm-packet/explorer/tm-explorer-content/packet-explorer/packet-explorer.component'
+import { TmExplorerContentParamDetails } from './tm-packet/explorer/tm-explorer-content/parameters-detail/parameters-detail.component'
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -31,6 +32,7 @@ import { TmPacketsService } from './tm-packets.service';
     TmExplorerContent,
     TmExplorerContentPacketList,
     TmExplorerContentPacketExplorer,
+    TmExplorerContentParamDetails,
   ],
   imports: [
     BrowserModule,
