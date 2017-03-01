@@ -15,6 +15,7 @@ export class TmExplorerContentPacketList  implements OnInit{
 
   onSelect(packet: SpacePacket): void {
     this.selectedPacket = packet;
+    this.tmPacketsService.setTmPacket(this.selectedPacket);
   }
 
   getTmPackets(): void {
