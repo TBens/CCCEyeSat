@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { TmPacketComponent } from './tm-packet/tm-packet.component';
-import { TmFreeComponent } from './tm-free/tm-free.component';
-import { TmGridComponent } from './tm-grid/tm-grid.component';
+import { TmPacketComponent } from './tm/tm-packet.component';
+import { TmFreeComponent } from './tm/tm-free/tm-free.component';
+import { TmGridComponent } from './tm/tm-grid/tm-grid.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
