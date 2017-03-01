@@ -1,21 +1,33 @@
-<div class="panel panel-primary">
-    <div class="panel panel-heading">
-        Explorateur de paquets
-    </div>
-    <div *ngIf="selectedPacket" class="panel panel-body" style="height:35vh">
-        <table class="table">
-            <tr>
-                <th>Status</th>
-                <th>Nom</th>
-            </tr>
-            <tr>
-                <td>
-                    <svg width="16" height="16">
-                        <circle cx="8" cy="8" r="4" fill=#1bc98e />
-                    </svg>
-                </td>
-                <td>{{selectedPacket.name}}</td>
-            </tr>
-        </table>
-    </div>
-</div>
+ <html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body> 
+    <div class="panel panel-primary">
+	    <div class="panel panel-heading">
+	        Explorateur de paquets
+		    </div>
+		    <div *ngIf="selectedPacket" class="panel panel-body" style="height:35vh">
+		        <table class="table">
+		            <tr >
+		                <th>Status</th>
+		                <th>Nom</th>
+		            </tr>
+		            <tr>
+		                <td >
+		                    <svg width="16" height="16">
+		                        <circle cx="8" cy="8" r="4" fill=#1bc98e />
+		                    </svg>
+		                </td>
+		                <td>
+		                	{{selectedPacket.name}}
+		                </td>
+		            </tr>
+		        </table>
+		    </div>
+		</div>
+    </body>
+</html>
+    
