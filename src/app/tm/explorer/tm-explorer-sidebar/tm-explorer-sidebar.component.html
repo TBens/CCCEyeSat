@@ -70,8 +70,8 @@
 		                        <div class="panel-body">
 		                            <ul class="nav">
 		                                <li><a href="#" ondrop="drop(event)" ondragover="allowDrop(event)">Créer une nouvelle vue</a></li>
-		                                <li><a href="customviewgrid.html" ondrop="drop(event)" ondragover="allowDrop(event)">Vue alignée sur grille</a></li>
-		                                <li><a href="customviewfree.html" ondrop="drop(event)" ondragover="allowDrop(event)">Vue placement libre</a></li>
+		                                <li><a (click)="gotoTmGrid()" class="pointer-hover" ondrop="drop(event)" ondragover="allowDrop(event)">Vue alignée sur grille</a></li>
+		                                <li><a (click)="gotoTmFree()" class="pointer-hover" ondrop="drop(event)" ondragover="allowDrop(event)">Vue placement libre</a></li>
 		                            </ul>
 		                        </div>
 		                    </div>

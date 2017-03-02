@@ -16,6 +16,7 @@ import { TmExplorerContent } from './tm/explorer/tm-explorer-content/tm-explorer
 import { TmExplorerContentPacketList } from './tm/explorer/tm-explorer-content/packet-list/packet-list.component';
 import { TmExplorerContentPacketExplorer } from './tm/explorer/tm-explorer-content/packet-explorer/packet-explorer.component';
 import { TmExplorerContentParamDetails } from './tm/explorer/tm-explorer-content/parameters-detail/parameters-detail.component';
+import { TreeModule } from 'angular2-tree-component';
 
 import { TmPacketsService } from './tm-packets.service';
 
@@ -38,7 +39,8 @@ import { TmPacketsService } from './tm-packets.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TreeModule
   ],
   providers: [TmPacketsService],
   bootstrap: [AppComponent]

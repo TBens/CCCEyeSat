@@ -27,7 +27,8 @@ export class SpacePacket {
 }
 
 export abstract class AbstractContainer {
-
+  name = ''; 
+  subContainers: Array<AbstractContainer>;
 }
 
 export class PacketContainer extends AbstractContainer {
